@@ -182,8 +182,6 @@ result = map(lambda x: x*x, numbers)
 map (\x -> x*x) [1..5]
 ```
 
-
-
 # RECURSOS PARA APRENDER PROGRAMACIÓN FUNCIONAL
 
 ## Cursos
