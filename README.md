@@ -110,15 +110,94 @@ Q:
 
 > Facilidad de escritura para aplicaciones *paralelas/concurrentes*
 
-![Tex Implicación](https://latex.codecogs.com/svg.image?p\rightarrow&space;q)
+p -> q
 
+## Reduction
+
+Mecanismo para *ejecutar* programas funcionales. Proceso de convertir una expresión a una forma *más simple*.
+Ejemplo:
+
+```bash
+3+(5*(8-2))
+-->Reduction
+3+(5*6)
+-->Reduction
+3+30
+-->
+33
+```
+
+```bash
+(3+4)*(15-9)
+-->Reduction
+7*(15-9)             | (3+4)*6
+-->
+7*6                  | 7*6
+-->
+42
+```
+## Redex (Reducible expression)
+
+Una expresión que coincide con el lado izquierdo de alguna regla de reducción o definición. Es cualquier expresión cuya *evaluación requiere que se realice un trabajo*.
+
+## Teorema de Church-Rosser:
+
+> Establece que, al aplicar las reglas de reducción a los términos , el orden en el que se eligen las reducciones no hace una diferencia en el resultado final.
+
+> Diferentes expresiones pueden ser evaluadas en paralelo, sin afectar el resultado.
+
+# Expresiones
+
+Algunos dicen que:
+
+> Functional programming is programming with expressions.
+
+
+Porque en todo usamos expresiones, una expresión es una serie de operaciones que dan como resultado un **solo valor**. 2+2 es una expresión que se evalúa al valor 4. Estad pueden contener *llamadas a funciones*.
+
+# Ecuaciones
+
+Es tan simple definir su utilidad como:
+> Da nombre a valores
+> Lado izquierdo = lado derecho
+
+Espera, esto me suena a una variable, como en otros lenguajes, ¿es eso?
+
+> Nooooo...., en programación funcional no existen las variables
+
+*La reasignación no está permitida*
+
+Es más como una *contante*, una vez dado el valor a un nombre, no puedes cambiarlo **nunca**.
+
+# Funciones anónimas (lambdas)
+
+Las funciones que no tienen nombre, son las funciones anónimas, también llamadas *lambdas*, muy útiles en Haskell, incluso probablemente las has utilizado con otros lenguajes, con el común *map* o *filter*:
+
+```python
+numbers = [1, 2, 3, 4, 5]
+result = map(lambda x: x*x, numbers)
+```
+
+```haskell
+map (\x -> x*x) [1..5]
+```
 
 
 
 # RECURSOS PARA APRENDER PROGRAMACIÓN FUNCIONAL
 
+## Cursos
+
 * [Functional Programming in Haskell: Supercharge Your Coding](https://www.futurelearn.com/courses/functional-programming-haskell)
 * [Functional Programming in Erlang](https://www.futurelearn.com/courses/functional-programming-erlang)
 * [Functional Programming Principles in Scala](https://es.coursera.org/learn/scala-functional-programming)
-* [HackerRank in Haskell](https://www.classcentral.com/course/youtube-haskellrank-59641/classroom)
+* [HaskellRank](https://www.classcentral.com/course/youtube-haskellrank-59641/classroom)
 * [Haskell for Beginners](https://www.classcentral.com/course/youtube-haskell-for-beginners-59640/classroom)
+
+## Desafíos
+
+* [HackerRank Functional Programming](https://www.hackerrank.com/domains/fp)
+* [Exercism Haskell](https://exercism.org/tracks/haskell)
+* [Exercism Erlang](https://exercism.org/tracks/erlang)
+* [Exercism Elixir](https://exercism.org/tracks/elixir)
+* [Exercism Clojure](https://exercism.org/tracks/clojure)
